@@ -1,5 +1,5 @@
 {
-  "name": "kejal-homeopathy-www",
+  "name": "kejal-homeopathy---www",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,12 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@calcom/embed-react": "^1.5.3",
-    "@emailjs/browser": "^4.4.1",
+    "@next/font": "^14.2.15",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "react-hook-form": "^7.71.1"
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -1,39 +1,52 @@
-const statsData = [
-  { id: 1, title: "10+", description: "Years Of Exp." },
-  { id: 2, title: "500+", description: "Happy Clients" },
-  { id: 3, title: "20+", description: "Conditions supported" },
-  // { id: 4, title: "$400M", description: "Paid out to creators" },
+const serviceData = [
+    { id: 1, title: "Signature Massage", description: "Relax completely with our Signature Massage, designed to release tension and soothe sore muscles", subhead: "massage", img: "/cardimg1.webp" },
+    { id: 2, title: "Revitalizing Facial", description: "Our Revitalizing Facial restores a radiant youthful glow and nourishes your skin with the finest products", subhead: "facial", img: "/cardimg2.webp" },
+    { id: 3, title: "Detox Body Scrub", description: "Exfoliate and refresh your skin with our invigorating Detox Body Scrub, leaving it smooth and radiant", subhead: "scrub", img: "/cardimg3.webp" },
 ];
 
 
-const about = () => {
-  return (
-    <div className="flex flex-col max-w-7xl mx-auto px-6">
-      <div className="text-center">
-        <h2 className="text-5xl mt-10 font-medium text-gray-900" id="about">About me</h2>
-        <p className="text-xl mt-5 text-gray-600">I am a qualified homeopath with 10+ years of clinical experience and a passion for helping people feel like themselves again—calmer, clearer, and more comfortable in their own bodies.
-          Over this time I have worked with a wide range of clients, from young children to older adults, with simple acute complaints through to complex, long‑standing health challenges.My approach is collaborative and compassionate: we work together as a team, so you feel informed, supported, and confident in each step of your healing journey.I follow professional standards of practice and ethical guidelines, and I am committed to safe, responsible use of homeopathy alongside conventional healthcare when needed.
-        </p>
-      </div>
-      <div className="flex flex-col md:flex-row flex justify-around text-gray-900 mt-10 gap-y-0.5 md:gap-x-0.5 rounded-xl mask-clip-border overflow-hidden">
-        {statsData.map((item) => (
-          <StatCard
-            key={item.id}
-            title={item.title}
-            description={item.description}
-          />
-        ))}
-      </div>
-    </div>
-  )
+const Aboutme = () => {
+    return (
+        <>
+            <div className="bg-stone-200">
+                <div className="bg-stone-200 px-6 py-12 justify-center items-center flex flex-col">
+                    <h1 id="services" className="mt-6 text-4xl tracking-tighter text-gray-900 sm:text-8xl text-center max-w-xl ">Our Services</h1>
+                    <p className="mt-6 text-base leading-6 text-gray-600 max-w-sm text-center">Our experienced therapists offer personalized treatments that cater to your individual needs.</p>
+                </div>
+                <div className="flex flex-col mx-auto max-w-full md:max-w-7xl md:flex-row flex gap-y-6 md:gap-x-4 bg-stone-200 pb-25 px-5 md:px-0">
+                    {serviceData.map((item) => (
+                        <ServiceCard2
+                            key={item.id}
+                            btn="Learn More"
+                            subhead={item.subhead}
+                            title={item.title}
+                            description={item.description}
+                            img={item.img}
+                        />
+                    ))}
+                </div>
+            </div>
+        </>
+    );
 }
 
-export default about;
+export default Aboutme;
 
-const StatCard = ({ title = "Hello", description = "World" }) => (
-  <div className="flex flex-col h-32 items-center justify-center bg-gray-50 w-full text-gray-900 md:w-1/4">
-    <h6 className="text-3xl font-medium">{title}</h6>
-    <p className="text-sm text-gray-600">{description}</p>
-  </div>
+
+const ServiceCard2 = ({ title = "Hello", description = "World", btn = "Learn More", subhead = "Subhead", img = "img" }) => (
+    <div className="relative h-120 w-full overflow-hidden">
+        <div
+            className="absolute inset-0  brightness-50 bg-cover bg-center"
+            style={{ filter: '', backgroundImage: `url(${img})` }}
+        />
+        <div className="relative z-10 flex flex-col items-center justify-between h-full text-white p-8">
+            <p className="text-base leading-4 uppercase">{subhead}</p>
+            <div>
+                <h1 className="mt-10 text-2xl tracking-tighter sm:text-4xl text-center max-w-xl place-content-center">{title}</h1>
+                <p className="mt-6 text-base leading-6  max-w-xs text-center">{description}</p>
+            </div>
+            <a href="#services" className="rounded-full gap-3 bg-white px-7.5 py-4.5 text-base font-semibold text-gray-900">{btn}</a>
+        </div>
+    </div>
+
 )
-

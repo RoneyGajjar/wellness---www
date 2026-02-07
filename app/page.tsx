@@ -1,40 +1,38 @@
-'use client';
-import Hero from "@/components/header_and_hero";
-import About from "@/components/about";
-import Whyus from "@/components/whyus";
-import Pricing from "@/components/service";
-// import Testimonial from "@/components/testimonials";
+import Aboutme from "@/components/about";
+import Hero from "@/components/hero-navbar";
+import HeroSection from "@/components/whyus";
+import SpecialistsData from "@/components/specialists";
+import Testimonials from "@/components/testimonials";
+import Contact from "@/components/contact";
 import Footer from "@/components/footer";
-import Contact from "@/components/contact"; 
-import Meet from "@/components/meet";
+import Parallax from "@/components/parallax";
 
 export default function Home() {
   return (
     <>
-      {/* Hero Section and Header section */}
+      {/* Hero */}    
       <Hero />
 
-      {/* About */}
-      <About />
+      {/* parallax */}
+      <Parallax />
 
-      {/* Why chose Homeopathy */}
-      <Whyus />
+      {/* Why us */}
+      <HeroSection />
       
-      {/* Service Offered */}
-      <Pricing />
+      {/* About */}
+      <Aboutme />
+    
+      {/* specialists */}
+      <SpecialistsData />
 
-      {/* meet */}
-      <Meet />
+      {/* Testimonials */}
+      <Testimonials />
 
       {/* Contact */}
-      {/* <Contact /> */}
+      <Contact />
 
-      {/* Testimonial */}
-      {/* <Testimonial /> */}
-      
       {/* Footer */}
       <Footer />
     </>
-
   );
 }

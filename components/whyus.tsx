@@ -1,64 +1,49 @@
-const whyus = () => {
-    return(
-        <div className="bg-white py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base/7 font-semibold text-indigo-600" id="whyus">Why Us</h2>
-            <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance">Why choose homeopathy with me in Auckland? </p>
-            {/* <p className="mt-6 text-lg/8 text-gray-400">Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.</p> */}
+const HeroSection = () => {
+  // Mock data for the circular images
+  const images = [
+    { src: '/serviceimg1.webp', pos: 'top-[10%] left-[5%] w-32 h-32' },
+    { src: '/serviceimg2.webp', pos: 'top-[40%] left-[15%] w-24 h-24' },
+    { src: '/serviceimg3.webp', pos: 'bottom-[10%] left-[8%] w-36 h-36' },
+    { src: '/serviceimg.webp', pos: 'top-[10%] right-[5%] w-40 h-40' },
+    { src: '/serviceimg5.webp', pos: 'top-[45%] right-[12%] w-28 h-28' },
+    { src: '/serviceimg6.webp', pos: 'bottom-[10%] right-[8%] w-32 h-32' },
+  ];
+
+  return (
+    <section className="relative min-h-[80vh] w-full flex items-center justify-center bg-white px-6 py-20 overflow-hidden">
+      
+      {/* Background Decorative Images - Hidden on mobile for better UX */}
+      <div className="absolute inset-0 pointer-events-none hidden md:block">
+        {images.map((img, index) => (
+          <div
+            key={index}
+            className={`absolute rounded-full overflow-hidden border-4 border-white shadow-sm ${img.pos}`}
+          >
+            <div className="w-full h-full bg-stone-300">
+               {/* Replace with <Image /> component once assets are ready */}
+               <img 
+                src={img.src} 
+                alt="Wellness visual" 
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-              <div className="relative pl-16">
-                <dt className="text-base/7 font-semibold text-gray-900">
-                  <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" data-slot="icon" aria-hidden="true" className="size-6 text-white">
-                      <path d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                  Gentle, natural remedies
-                </dt>
-                <dd className="mt-2 text-base/7 text-gray-600">Homeopathic remedies are prepared in tiny doses, making them gentle on the body while still stimulating your own healing response. They&#039;re suitable for all ages when used correctly and do not create dependency.</dd>
-              </div>
-              <div className="relative pl-16">
-                <dt className="text-base/7 font-semibold text-gray-900">
-                  <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" data-slot="icon" aria-hidden="true" className="size-6 text-white">
-                      <path d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                  Truly holistic consultations
-                </dt>
-                <dd className="mt-2 text-base/7 text-gray-600">Every consultation looks at the whole picture—physical symptoms, emotions, stress, sleep, and lifestyle—so we can understand what your body is trying to express instead of just chasing individual symptoms.</dd>
-              </div>
-              <div className="relative pl-16">
-                <dt className="text-base/7 font-semibold text-gray-900">
-                  <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" data-slot="icon" aria-hidden="true" className="size-6 text-white">
-                      <path d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                  Time and space to be heard
-                </dt>
-                <dd className="mt-2 text-base/7 text-gray-600">Your first appointment is unhurried, giving you time to share your full story in a calm, confidential setting. Many clients say they feel lighter simply from having someone really listen.</dd>
-              </div>
-              <div className="relative pl-16">
-                <dt className="text-base/7 font-semibold text-gray-900">
-                  <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" data-slot="icon" aria-hidden="true" className="size-6 text-white">
-                      <path d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                  Support for short‑term and chronic issues
-                </dt>
-                <dd className="mt-2 text-base/7 text-gray-600">Homeopathy can be used for everyday complaints like coughs, colds, or injuries, and also alongside conventional care for longer‑standing concerns such as anxiety, skin conditions, allergies, digestive troubles, hormonal imbalance, or sleep problems.</dd>
-              </div>
-            </dl>
+        ))}
+      </div>
+
+      {/* Central Content */}
+      <div>
+        <div className="flex flex-col items-center justify-center px-6 py-12 lg:px-8 bg-white">
+          <p id="about" className="text-base leading-4 text-gray-600 uppercase text-center">ultimate experience in relaxation and rejuvenation</p>
+          <h1 className="mt-10 text-4xl tracking-tighter text-gray-900 sm:text-6xl text-center max-w-xl ">Where tranquility meets wellness</h1>
+          <p className="mt-6 text-base leading-6 text-gray-600 max-w-sm text-center">With a focus on relaxation and rejuvenation, we offer a variety of tailored treatments to restore balance and harmony to your body and mind.</p>
+          <div className="mt-12 flex items-center">
+            <a href="#about" className="justify-center rounded-full gap-3 bg-orange-800 px-7.5 py-4.5 text-base font-semibold text-white">About me</a>
           </div>
         </div>
       </div>
+    </section>
+  );
+};
 
-    )
-}
-
-export default whyus;
+export default HeroSection;
