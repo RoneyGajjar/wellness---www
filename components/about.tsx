@@ -33,7 +33,7 @@ const Aboutme = () => {
 export default Aboutme;
 
 
-const ServiceCard2 = ({ title = "Hello", description = "World", btn = "Learn More", subhead = "Subhead", img = "img" }) => (
+const ServiceCard2 = ({ title = "Hello", description = <>World</>, btn = "Learn More", subhead = "Subhead", img = "img" }) => (
     <div className="relative h-120 w-full overflow-hidden">
         <div
             className="absolute inset-0  brightness-50 bg-cover bg-center"
