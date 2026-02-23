@@ -1,7 +1,7 @@
 const testimonialData = [
-    {id: 1, name: "— Emily R.", feedback: "The best spa experience I've ever had! The Signature Massage was so relaxing, and the staff made me feel completely at ease. I left feeling completely rejuvenated!", img: "/testimg1.webp"},
-    {id:2, name: "— Veronica M.", feedback: "A true haven of tranquility. The Revitalizing Facial left my skin glowing, and I felt like a new person afterward. Highly recommend this place!", img: "/testimg2.webp"},
-    {id:3, name: "— Darrel S.", feedback: "I've been to many spas, but the level of care and expertise here is unmatched. The Detox Body Scrub was incredible, and I’ll definitely be returning!", img: "/testimg3.webp"}
+    {id: 1, name: "— Emily R. , Massey", feedback: "Kejal's home visit was a lifesaver for my sick daughter. Her gentle approach and quick acute care brought relief within days. The $50 consultation is the best investment for our family's health.", img: "/testimg1.webp"},
+    {id:2, name: "— Veronica M. , Online Service", feedback: "After years of struggling with a chronic condition, Kejal's in-depth online consultation changed everything. Her expertise provided a tailored plan for long-term, gentle healing right from my living room.", img: "/testimg2.webp"},
+    {id:3, name: "— Darrel S. , Auckland", feedback: "Kejal’s extensive background and NZCH registration put me at ease immediately. She takes the time to explain the homeopathic process, never rushes follow-ups, and offers completely transparent pricing.", img: "/testimg3.webp"}
 
 ];
 
@@ -10,7 +10,7 @@ const testimonialData = [
 const testimonials = () => {
     return (
         <div className ="bg-stone-200 pb-25 px-5 md:px-0">
-            <div className="mx-auto max-w-7xl ">
+            <div className="mx-auto max-w-7xl pt-150 md:pt-0">
                 <p className="text-sm md:text-base leading-4 text-gray-600 uppercase">Testimonials</p>
                 <h1 className="mt-8 text-4xl tracking-tighter text-gray-900 sm:text-6xl ">What our clients are saying</h1>
             </div>

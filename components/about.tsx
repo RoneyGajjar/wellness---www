@@ -1,7 +1,7 @@
 const serviceData = [
-    { id: 1, title: "Signature Massage", description: "Relax completely with our Signature Massage, designed to release tension and soothe sore muscles", subhead: "massage", img: "/cardimg1.webp" },
-    { id: 2, title: "Revitalizing Facial", description: "Our Revitalizing Facial restores a radiant youthful glow and nourishes your skin with the finest products", subhead: "facial", img: "/cardimg2.webp" },
-    { id: 3, title: "Detox Body Scrub", description: "Exfoliate and refresh your skin with our invigorating Detox Body Scrub, leaving it smooth and radiant", subhead: "scrub", img: "/cardimg3.webp" },
+    { id: 1, title: "Acute Care", description:<>First Consultation (1 Hour): $50 <br /> Follow-Up (15-20 Mins): $30</> , subhead: "Short-term conditions", img: "/cardimg1.webp", btn: "Get a Quick Remedies" },
+    { id: 2, title: "Chronic Care", description:<>First Consultation (1-2 Hours): $80 <br /> Follow-Up: $40</> , subhead: "Long-term conditions", img: "/cardimg2.webp", btn: "Book Now" },
+    { id: 3, title: "Flexible Consultation", description:<>In-Clinic: Visit me in Massey, Auckland.<br />Online: Secure, virtual consultations<br />Home Visits: Available within a 20 km radius for your convenience.</>, subhead: "Schedule Your Visit", img: "/cardimg3.webp", btn: "Schedule Now" },
 ];
 
 
@@ -17,7 +17,7 @@ const Aboutme = () => {
                     {serviceData.map((item) => (
                         <ServiceCard2
                             key={item.id}
-                            btn="Learn More"
+                            btn={item.btn}
                             subhead={item.subhead}
                             title={item.title}
                             description={item.description}
