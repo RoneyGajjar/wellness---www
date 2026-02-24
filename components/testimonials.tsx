@@ -10,7 +10,7 @@ const testimonialData = [
 const testimonials = () => {
     return (
         <div className ="bg-stone-200 pb-25 px-5 md:px-0">
-            <div className="mx-auto max-w-7xl pt-150 md:pt-0">
+            <div className="mx-auto max-w-7xl pt-120 md:pt-0">
                 <p className="text-sm md:text-base leading-4 text-gray-600 uppercase">Testimonials</p>
                 <h1 className="mt-8 text-4xl tracking-tighter text-gray-900 sm:text-6xl ">What our clients are saying</h1>
             </div>
